@@ -1,4 +1,4 @@
-package br.com.indra.jp_capacitacao_2026.service.dto;
+package br.com.indra.Capacitacao_RaphaelNinomiya.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

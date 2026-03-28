@@ -1,4 +1,4 @@
-package br.com.indra.jp_capacitacao_2026;
+package br.com.indra.Capacitacao_RaphaelNinomiya;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

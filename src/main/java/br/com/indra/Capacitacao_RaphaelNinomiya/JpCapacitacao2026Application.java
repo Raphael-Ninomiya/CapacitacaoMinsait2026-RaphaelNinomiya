@@ -1,4 +1,4 @@
-package br.com.indra.jp_capacitacao_2026;
+package br.com.indra.Capacitacao_RaphaelNinomiya;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class JpCapacitacao2026Application {
 	public static void main(String[] args) {
 		SpringApplication.run(JpCapacitacao2026Application.class, args);
 	}
-
 }

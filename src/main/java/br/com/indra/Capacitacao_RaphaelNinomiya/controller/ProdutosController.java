@@ -1,14 +1,11 @@
-package br.com.indra.jp_capacitacao_2026.controller;
+package br.com.indra.Capacitacao_RaphaelNinomiya.controller;
 
-import br.com.indra.jp_capacitacao_2026.model.Produtos;
-import br.com.indra.jp_capacitacao_2026.repository.ProdutosRepository;
-import br.com.indra.jp_capacitacao_2026.service.ProdutosService;
+import br.com.indra.Capacitacao_RaphaelNinomiya.model.Produtos;
+import br.com.indra.Capacitacao_RaphaelNinomiya.service.ProdutosService;
+import br.com.indra.Capacitacao_RaphaelNinomiya.service.dto.ProductRequest;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,8 +38,8 @@ public class ProdutosController {
     @Operation(description = "Endpoint para criar um novo produto",
             summary = "Criação de produto")
     @PostMapping("/cria")
-    public ResponseEntity<Produtos> criarProduto(@RequestBody Produtos produto){
-        return ResponseEntity.ok(produtosService.createdProduto(produto));
+    public ResponseEntity<Produtos> criarProduto(@RequestBody ProductRequest request){
+        return ResponseEntity.ok(produtosService.createdProduto(request));
     }
 
     /**

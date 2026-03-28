@@ -12,7 +12,7 @@ spring:
 
   datasource:
     url: ${URL_DB:jdbc:oracle:thin:@//localhost:1521/XEPDB1}
-    username: ${USERNAME_DB:admin}
+    username: ${USERNAME_DB:SYSTEM}
     password: ${PASSWORD_DB:admin}
     driverClassName: oracle.jdbc.driver.OracleDriver
 

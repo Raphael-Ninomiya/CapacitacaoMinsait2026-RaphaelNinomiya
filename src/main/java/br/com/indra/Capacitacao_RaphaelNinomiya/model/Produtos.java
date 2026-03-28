@@ -1,16 +1,6 @@
-package br.com.indra.jp_capacitacao_2026.model;
+package br.com.indra.Capacitacao_RaphaelNinomiya.model;
 
-import jakarta.annotation.Nullable;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,4 +31,25 @@ public class Produtos {
     @Column(name="codigo_barras")
     private String codigoBarras;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
+
+    @Entity
+    public class Product {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String name;
+
+        private Integer stock;
+
+        private Integer minimumStock;
+
+    }
+
+    @Column(nullable = false)
+    private Integer stock = 0;
 }

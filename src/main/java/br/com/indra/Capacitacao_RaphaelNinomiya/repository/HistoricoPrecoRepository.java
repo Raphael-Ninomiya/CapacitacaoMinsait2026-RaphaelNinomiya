@@ -1,8 +1,7 @@
-package br.com.indra.jp_capacitacao_2026.repository;
+package br.com.indra.Capacitacao_RaphaelNinomiya.repository;
 
-import br.com.indra.jp_capacitacao_2026.model.HistoricoPreco;
+import br.com.indra.Capacitacao_RaphaelNinomiya.model.HistoricoPreco;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;

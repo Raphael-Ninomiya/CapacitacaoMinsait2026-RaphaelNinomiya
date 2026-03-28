@@ -1,6 +1,6 @@
-package br.com.indra.jp_capacitacao_2026.repository;
+package br.com.indra.Capacitacao_RaphaelNinomiya.repository;
 
-import br.com.indra.jp_capacitacao_2026.model.Produtos;
+import br.com.indra.Capacitacao_RaphaelNinomiya.model.Produtos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,16 +1,16 @@
-package br.com.indra.jp_capacitacao_2026.service;
+package br.com.indra.Capacitacao_RaphaelNinomiya.service;
 
-import br.com.indra.jp_capacitacao_2026.model.HistoricoPreco;
-import br.com.indra.jp_capacitacao_2026.model.Produtos;
-import br.com.indra.jp_capacitacao_2026.repository.HistoricoPrecoRepository;
-import br.com.indra.jp_capacitacao_2026.repository.ProdutosRepository;
+import br.com.indra.Capacitacao_RaphaelNinomiya.model.HistoricoPreco;
+import br.com.indra.Capacitacao_RaphaelNinomiya.model.Produtos;
+import br.com.indra.Capacitacao_RaphaelNinomiya.repository.CategoryRepository;
+import br.com.indra.Capacitacao_RaphaelNinomiya.repository.HistoricoPrecoRepository;
+import br.com.indra.Capacitacao_RaphaelNinomiya.repository.ProdutosRepository;
+import br.com.indra.Capacitacao_RaphaelNinomiya.service.dto.ProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,12 +18,26 @@ public class ProdutosService {
 
     private final ProdutosRepository produtosRepository;
     private final HistoricoPrecoRepository historicoPrecoRepository;
+    private final CategoryRepository categoryRepository;
 
     public List<Produtos> getAll() {
         return produtosRepository.findAll();
     }
 
-    public Produtos createdProduto(Produtos produto) {
+    public Produtos createdProduto(ProductRequest request) {
+
+        final var category = categoryRepository.findById(request.getCategoryId())
+                .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
+
+        Produtos produto = new Produtos();
+
+        produto.setNome(request.getNome());
+        produto.setDescricao(request.getDescricao());
+        produto.setPreco(request.getPreco());
+        produto.setCodigoBarras(request.getCodigoBarras());
+
+        produto.setCategory(category);
+
         return produtosRepository.save(produto);
     }
 
